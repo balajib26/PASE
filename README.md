@@ -47,4 +47,3 @@ every worker. Alternatively, we could define a base class and inherit it in thos
 ### References
 - https://github.com/santi-pdp/pase
 - https://github.com/speechbrain/speechbrain
-- https://github.com/salesforce/pytorch-qrnn
