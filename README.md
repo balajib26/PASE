@@ -23,9 +23,6 @@ encoder on downstream tasks. Currently, there is only one downstream task: speak
 	- `lr_update_interval`: How often to update the lr of encoder and workers. The code uses LinearScheduler 
 	for lr annealing.
 	- `decay_factor`: This tells how much to decay the current lr when the lr is being updated.
-- **Encoder model configuration**:
-	- The encoder supports 3 major configurations:
-		- Plain encoder with `SincConv` layers and `Conv1d` layers.
 - **Addition of new worker**:
 	- To add a new worker, the worker model definition needs to be added in the `models` directory.
 	- Then, the `{worker}_model` variable needs to be defined in the yaml which is used for model 
