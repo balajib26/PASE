@@ -7,7 +7,6 @@ to be useful in various downstream tasks which require large amount of data.
 - `downstream`: This directory provides code to use the trained encoder and evaluate the performance of trained 
 encoder on downstream tasks. Currently, there is only one downstream task: speaker classification.
 - `models`: This directory contains model definitions for encoder and workers.
-- `qrnn`: The QRNN module used by the encoder (used depending on the config in yaml).
 
 ### Self-supervised system setup
 - We train the self-supervised system on minilibrispeech dataset.
@@ -27,8 +26,6 @@ encoder on downstream tasks. Currently, there is only one downstream task: speak
 - **Encoder model configuration**:
 	- The encoder supports 3 major configurations:
 		- Plain encoder with `SincConv` layers and `Conv1d` layers.
-		- Use QRNN in addition to the above setup.
-		- Use skip connections to the plain decoder or with (plain decoder + Q-RNN).
 - **Addition of new worker**:
 	- To add a new worker, the worker model definition needs to be added in the `models` directory.
 	- Then, the `{worker}_model` variable needs to be defined in the yaml which is used for model 
@@ -55,8 +52,6 @@ binaries. Please make sure to run the command
 the additional cuda libraries required by cupy.
 
 ### TODO
-- The `qrnn` module present in this code is same as the one used in the self-supervised training. 
-Try to import the qrnn from the main directory instead of copying the same to the current directory and using it.
 - Many workers use the same architecture (except the hparams change) and the code is copied multiple times on 
 every worker. Alternatively, we could define a base class and inherit it in those worker classes.
 
