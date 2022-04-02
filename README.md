@@ -40,10 +40,6 @@ command `python train.py train.yaml`. This will download the minilibrispeech dat
 the current directory and then train the encoder on the dataset.
 - The encoder ckpts will be saved in the `results` directory according to the configuration in the yaml file.
 
-### TODO
-- Many workers use the same architecture (except the hparams change) and the code is copied multiple times on 
-every worker. Alternatively, we could define a base class and inherit it in those worker classes.
-
 ### References
 - https://github.com/santi-pdp/pase
 - https://github.com/speechbrain/speechbrain
